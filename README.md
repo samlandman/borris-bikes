@@ -1,1 +1,1 @@
-This is a program that creates Borris bikes.
+This is a program that creates Boris bikes.
