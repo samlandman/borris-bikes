@@ -3,7 +3,6 @@ class DockingStation
     @name = name
   end  
   def release_bike
-    puts "Bike Released"
+    "Bike Released"
   end
-
 end
