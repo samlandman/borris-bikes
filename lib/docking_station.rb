@@ -1,8 +1,11 @@
+require_relative 'bike'
+
 class DockingStation
-  def initialize(name)
-    @name = name
-  end  
+  #def initialize(name)
+    #@name = name
+  #end  
   def release_bike
-    "Bike Released"
+    Bike.new
+    #"Bike Released"
   end
 end
