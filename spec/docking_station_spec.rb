@@ -1,17 +1,17 @@
 require 'docking_station'
 
 describe DockingStation do
-  #describe 'initialize' do
-    #it 'can be created with a certain number of bikes' do
-      #docking_station = DockingStation.new(10)
-      #expect(docking_station).to be_an_instance_of DockingStation
-    #end
-  #end
+
+  DEFAULT_CAPACITY = 20
+
+  describe 'initialize' do
+    it 'sets default capacity of DockingStation' do
+      expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+    end
+  end
+
   describe '#release_bike' do
-    #it 'returns release bike when bike released' do
-      #docking_station = DockingStation.new(10)
-      #expect(docking_station.release_bike).to eql('Bike Released')
-    #end
+
     it { is_expected.to respond_to :release_bike }
     it 'gets a bike' do
       bike = Bike.new
@@ -39,7 +39,7 @@ describe DockingStation do
   describe '#dock' do
     it { is_expected.to respond_to(:dock).with(1).argument }
       it 'raises an error when the station is full' do
-        20.times { subject.dock Bike.new }
+        DEFAULT_CAPACITY.times { subject.dock Bike.new }
         expect { subject.dock Bike.new }.to raise_error 'This station is full'
       end
   end
